@@ -66,11 +66,7 @@ class Youtube_Video{
 
     displayComments = () =>{
         
-        
-        let numberOfComments = this.comments.length;
-        
-        console.log(numberOfComments);
-        for (let x in this.comments){
+        for (let x = 1; x < this.comments.length; x++){
             console.log(this.comments[x])
         }
     }
@@ -114,7 +110,7 @@ class Social_Profile {
     private languages : string[];
     private religiousViews : string[];
     private politicalViews : string[];
-    private relaionship : string;
+    private relationship : string;
     private familyMembers : string[];
     private aboutYou : string;
     private otherNames : string[];
@@ -123,16 +119,18 @@ class Social_Profile {
     private isDonated : boolean;
     private friendList : string[];
     
-    constructor (userName : string, dateOfBirth : string, gender : string, interestedIn : string, relationship : string, prifilePic ?: string, phNumber ?: string[], occupation ?: string[], livesIn ?: string[], languages ?: string[], religiousViews ?: string[], politicalViews ?: string[], familyMembers ?: string[], aboutYou ?: string, otherNames ?: string[], quote ?: string, bloodgroup ?: string, isDonated ?: boolean, friendList ?: string[]){
+    constructor (userName : string, dateOfBirth : string, gender : string, interestedIn : string, relationship : string, emailAddress: string[], profilePic : string, phNumber : string[], occupation : string[], education : string[] = [], livesIn : string[], languages : string[], religiousViews : string[] = [], politicalViews : string[] = [], familyMembers : string[] = [], aboutYou : string = "",friendList : string[] = [], otherNames : string[] = [], quote ?: string , bloodgroup ?: string , isDonated ?: boolean){
         
         this.userName = userName;
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
         this.interestedIn = interestedIn;
-        this.relaionship = this.relaionship;
-        this.profilePic = this.profilePic;
+        this.relationship = relationship;
+        this.emailAddress = emailAddress;
+        this.profilePic = profilePic;
         this.phNumber = phNumber;
         this.occupation = occupation;
+        this.education = education;
         this.livesIn = livesIn;
         this.languages = languages;
         this.religiousViews = religiousViews;
@@ -147,11 +145,24 @@ class Social_Profile {
     }
 
     getOverView = () => {
-        let lastOc = this.occupation.length;
-        console.log(this.occupation[lastOc-1]);
-        
-        let lastEd = this.education.length;
-        console.log(this.education[lastEd-1]);
+
+        console.log("Overview");
+        console.log(this.userName);
+        if(this.occupation.length == 0){
+            console.log("No last known occupation");
+        }
+        else{
+            let lastOc = this.occupation.length;
+            console.log(this.occupation[lastOc-1]);
+        }
+
+        if(this.education.length == 0){
+            console.log("No last known schools to display");
+        }
+        else{
+            let lastEd = this.education.length;
+            console.log(this.education[lastEd-1]);
+        }
 
         let lastCy = this.livesIn.length;
         console.log(this.livesIn[lastCy-1]);
@@ -167,13 +178,23 @@ class Social_Profile {
 
 
     getWorkAndEducation = () => {
-        for (let x in this.education ){
-            console.log(this.education[x])
+
+        console.log("Work and Education");
+
+        if(this.education.length == 0){
+            console.log("No education info to display");
+        }
+        else{
+            for (let x in this.education ){
+                console.log(this.education[x]);
+            }
         }
 
+        
         for (let x in this.occupation){
-            console.log(this.occupation[x])
+            console.log(this.occupation[x]);
         }
+        
     }
     
     addNewWork = (work : string) => {
@@ -185,8 +206,9 @@ class Social_Profile {
     }
 
     getPlacesLived = () => {    
+
         for (let x in this.livesIn){
-            console.log(this.livesIn[x])
+            console.log(this.livesIn[x]);
         }
     }
 
@@ -195,10 +217,13 @@ class Social_Profile {
     }
 
     getContactAndBasicInfo = () => {
+        
+        console.log("Contacts and Basic Info");
+
         for (let x in this.phNumber){
             console.log(this.phNumber[x]);
         }
-
+        
         for (let x in this.emailAddress){
             console.log(this.emailAddress[x])
         }
@@ -206,14 +231,32 @@ class Social_Profile {
         console.log (this.dateOfBirth);
         console.log (this.gender);
         console.log(this.interestedIn);
-        for (let x in this.languages){
-            console.log(this.languages[x])
+        
+        if(this.languages.length == 0){
+            console.log("No languages available");
         }
-        for (let x in this.politicalViews){
-            console.log(this.politicalViews[x])
+        else{
+            for (let x in this.languages){
+                console.log(this.languages[x]);
+            }
         }
-        for (let x in this.religiousViews){
-            console.log(this.religiousViews[x])
+
+        if(this.politicalViews.length == 0){
+            console.log("No political views available");
+        }
+        else{
+            for (let x in this.politicalViews){
+                console.log(this.politicalViews[x]);
+            }
+        }
+
+        if(this.religiousViews.length == 0){
+            console.log("No religious views available");
+        }
+        else{
+            for (let x in this.religiousViews){
+                console.log(this.religiousViews[x]);
+            }
         }
     }
 
@@ -238,22 +281,42 @@ class Social_Profile {
     }
     
     getFamilyAndRelationshipDetails = () => {
-        console.log(this.relaionship);
 
-        for(let x in this.familyMembers){
-            console.log(this.familyMembers[x]);
+        console.log("Family and Relationships");
+
+        console.log(this.relationship);
+
+        if(this.familyMembers.length == 0){
+            console.log("No family members to display");
+        }
+        else{
+            for(let x in this.familyMembers){
+                console.log(this.familyMembers[x]);
+            }
         }
     }
 
     addFamilyMembers = (family : string) => {
+        if(this.familyMembers.length == 0){
+            return this.familyMembers[0] = family;
+        }
+
         return this.familyMembers.push(family);
     }
 
     getDetailsAboutYou = () => {
+
+        console.log("About You");
+
         console.log(this.aboutYou);
 
-        for (let x in this.otherNames){
-            console.log(this.otherNames[x]);
+        if(this.otherNames.length == 0){
+            console.log("No alias to dispaly");
+        }
+        else{
+            for (let x in this.otherNames){
+                console.log(this.otherNames[x]);
+            }
         }
 
         console.log(this.quote);
@@ -261,6 +324,15 @@ class Social_Profile {
         console.log(this.bloodGroup);
 
         console.log(this.isDonated);
+    }
+
+    addQuote = (quote : string) => {
+        return this.quote = quote;
+    }
+
+    addBloodGroupAndDonationStatus = (bloodGroup : string, donationStatus : boolean) => {
+        this.bloodGroup = bloodGroup;
+        this.isDonated = donationStatus;
     }
 
     addAboutYou = (about : string) => {
@@ -272,25 +344,73 @@ class Social_Profile {
     }
 
     getFriendList = () => {
-        for (let x in this.friendList){
-            console.log(this.friendList[x])
+
+        console.log("Friend List");
+
+        if(this.friendList.length == 0){
+            console.log("No friends to display");
         }
+        else{
+           for (let x in this.friendList){
+                console.log(this.friendList[x]);
+            }
+        }
+    }
+
+    addFriends = (friend:string) => {
+        this.friendList.push(friend);
     }
 }
     
-let firstVideo = new Youtube_Video(1,"First Youtube video", "www.youtube.com/first_youtube_video", "The greatest channel", 2, "Just a sample Video", "04-09-2018", true)
-let secondVideo = new Youtube_Video(2,"Second Youtube video", "www.youtube.com/second_youtube_video", "The greatest channel", 3, "Just another sample Video", "04-09-2018", true, 200, 15, 2, ["This is awesome", "You suck!!", "Make more", "Best I've seen"])
+//let firstVideo = new Youtube_Video(1,"First Youtube video", "www.youtube.com/first_youtube_video", "The greatest channel", 2, "Just a sample Video", "04-09-2018", true)
+//let secondVideo = new Youtube_Video(2,"Second Youtube video", "www.youtube.com/second_youtube_video", "The greatest channel", 3, "Just another sample Video", "04-09-2018", true, 200, 15, 2, ["This is awesome", "You suck!!", "Make more", "Best I've seen"])
 
-firstVideo.getVideoTitle();
-firstVideo.getNumberOfViews();
-firstVideo.getUpVotes();
-firstVideo.getDownVotes();
-firstVideo.displayComments();
-firstVideo.addComments("Not bad");
-firstVideo.addComments("I've seen better");
-firstVideo.displayComments();
-firstVideo.likeVideo();
-firstVideo.likeVideo();
-firstVideo.hateVideo();
-firstVideo.getUpVotes();
-firstVideo.getDownVotes();
+//firstVideo.getVideoTitle();
+//firstVideo.getNumberOfViews();
+//firstVideo.getUpVotes();
+//firstVideo.getDownVotes();
+//firstVideo.displayComments();
+//firstVideo.addComments("Not bad");
+//firstVideo.addComments("I've seen better");
+//firstVideo.displayComments();
+//firstVideo.likeVideo();
+//firstVideo.likeVideo();
+//firstVideo.hateVideo();
+//firstVideo.getUpVotes();
+//firstVideo.getDownVotes();
+
+
+//secondVideo.getVideoTitle();
+//secondVideo.getNumberOfViews();
+//secondVideo.subscribeChannel();
+//secondVideo.displayComments();
+//secondVideo.likeVideo();
+//secondVideo.getUpVotes();
+//secondVideo.shareVideo();
+//secondVideo.getNumberOfSubscribers();
+
+
+//let first_profile = new Social_Profile("Person", "12-04-1994", "male", "women", "single", ["person@mail.com"],"www.profilepic.com/Person", ["6622554477"], ["software developer"],["ABC School"], ["Chennai"], ["English", "Tamil", "Hindi"])
+
+//first_profile.addEmailAddress("person2@ymail.com");
+//first_profile.addFamilyMembers("Mom")
+//first_profile.addFriends("friend1")
+//first_profile.addNewPlaces("Mumbai")
+//first_profile.addLanguages("French")
+//first_profile.addNewWork("IT company")
+//first_profile.addNewEducation("ABC College")
+//first_profile.addPoliticalView("political view of person")
+//first_profile.addReligiousViews("religious view of person")
+//first_profile.addOtherNames("Human")
+//first_profile.addPhnumber("1234546789")
+//first_profile.addAboutYou("I am the first person here")
+//first_profile.addQuote("I am finally here")
+//first_profile.addBloodGroupAndDonationStatus("O", true)
+
+
+//first_profile.getOverView();
+//first_profile.getContactAndBasicInfo();
+//first_profile.getDetailsAboutYou();
+//first_profile.getPlacesLived();
+//first_profile.getWorkAndEducation();
+//first_profile.getFamilyAndRelationshipDetails()
