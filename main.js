@@ -260,47 +260,47 @@ var Social_Profile = /** @class */ (function () {
     }
     return Social_Profile;
 }());
-//let firstVideo = new Youtube_Video(1,"First Youtube video", "www.youtube.com/first_youtube_video", "The greatest channel", 2, "Just a sample Video", "04-09-2018", true)
-//let secondVideo = new Youtube_Video(2,"Second Youtube video", "www.youtube.com/second_youtube_video", "The greatest channel", 3, "Just another sample Video", "04-09-2018", true, 200, 15, 2, ["This is awesome", "You suck!!", "Make more", "Best I've seen"])
-//firstVideo.getVideoTitle();
-//firstVideo.getNumberOfViews();
-//firstVideo.getUpVotes();
-//firstVideo.getDownVotes();
-//firstVideo.displayComments();
-//firstVideo.addComments("Not bad");
-//firstVideo.addComments("I've seen better");
-//firstVideo.displayComments();
-//firstVideo.likeVideo();
-//firstVideo.likeVideo();
-//firstVideo.hateVideo();
-//firstVideo.getUpVotes();
-//firstVideo.getDownVotes();
-//secondVideo.getVideoTitle();
-//secondVideo.getNumberOfViews();
-//secondVideo.subscribeChannel();
-//secondVideo.displayComments();
-//secondVideo.likeVideo();
-//secondVideo.getUpVotes();
-//secondVideo.shareVideo();
-//secondVideo.getNumberOfSubscribers();
-//let first_profile = new Social_Profile("Person", "12-04-1994", "male", "women", "single", ["person@mail.com"],"www.profilepic.com/Person", ["6622554477"], ["software developer"],["ABC School"], ["Chennai"], ["English", "Tamil", "Hindi"])
-//first_profile.addEmailAddress("person2@ymail.com");
-//first_profile.addFamilyMembers("Mom")
-//first_profile.addFriends("friend1")
-//first_profile.addNewPlaces("Mumbai")
-//first_profile.addLanguages("French")
-//first_profile.addNewWork("IT company")
-//first_profile.addNewEducation("ABC College")
-//first_profile.addPoliticalView("political view of person")
-//first_profile.addReligiousViews("religious view of person")
-//first_profile.addOtherNames("Human")
-//first_profile.addPhnumber("1234546789")
-//first_profile.addAboutYou("I am the first person here")
-//first_profile.addQuote("I am finally here")
-//first_profile.addBloodGroupAndDonationStatus("O", true)
-//first_profile.getOverView();
-//first_profile.getContactAndBasicInfo();
-//first_profile.getDetailsAboutYou();
-//first_profile.getPlacesLived();
-//first_profile.getWorkAndEducation();
-//first_profile.getFamilyAndRelationshipDetails()
+var firstVideo = new Youtube_Video(1, "First Youtube video", "www.youtube.com/first_youtube_video", "The greatest channel", 2, "Just a sample Video", "04-09-2018", true);
+var secondVideo = new Youtube_Video(2, "Second Youtube video", "www.youtube.com/second_youtube_video", "The greatest channel", 3, "Just another sample Video", "04-09-2018", true, 200, 15, 2, ["This is awesome", "You suck!!", "Make more", "Best I've seen"]);
+firstVideo.getVideoTitle();
+firstVideo.getNumberOfViews();
+firstVideo.getUpVotes();
+firstVideo.getDownVotes();
+firstVideo.displayComments();
+firstVideo.addComments("Not bad");
+firstVideo.addComments("I've seen better");
+firstVideo.displayComments();
+firstVideo.likeVideo();
+firstVideo.likeVideo();
+firstVideo.hateVideo();
+firstVideo.getUpVotes();
+firstVideo.getDownVotes();
+secondVideo.getVideoTitle();
+secondVideo.getNumberOfViews();
+secondVideo.subscribeChannel();
+secondVideo.displayComments();
+secondVideo.likeVideo();
+secondVideo.getUpVotes();
+secondVideo.shareVideo();
+secondVideo.getNumberOfSubscribers();
+var first_profile = new Social_Profile("Person", "12-04-1994", "male", "women", "single", ["person@mail.com"], "www.profilepic.com/Person", ["6622554477"], ["software developer"], ["ABC School"], ["Chennai"], ["English", "Tamil", "Hindi"]);
+first_profile.addEmailAddress("person2@ymail.com");
+first_profile.addFamilyMembers("Mom");
+first_profile.addFriends("friend1");
+first_profile.addNewPlaces("Mumbai");
+first_profile.addLanguages("French");
+first_profile.addNewWork("IT company");
+first_profile.addNewEducation("ABC College");
+first_profile.addPoliticalView("political view of person");
+first_profile.addReligiousViews("religious view of person");
+first_profile.addOtherNames("Human");
+first_profile.addPhnumber("1234546789");
+first_profile.addAboutYou("I am the first person here");
+first_profile.addQuote("I am finally here");
+first_profile.addBloodGroupAndDonationStatus("O", true);
+first_profile.getOverView();
+first_profile.getContactAndBasicInfo();
+first_profile.getDetailsAboutYou();
+first_profile.getPlacesLived();
+first_profile.getWorkAndEducation();
+first_profile.getFamilyAndRelationshipDetails();
